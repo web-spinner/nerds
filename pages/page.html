@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>New Page</title>
+        <meta name="theme-color" content="#c9e0e04d">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <header class="header">
+  <div class="wrap">
+    <nav class="nav-main header__nav">
+      <a class="logo nav-main__logo" aria-label="Логотип Nerds" href="../index.html">
+        <svg width="160" height="65" role="img">
+          <use xlink:href="../img/sprites/sprite.svg#nerds-logo"></use>
+        </svg>
+      </a>
+      <button id="menu-button" class="button-menu nav-main__btn" type="button"><span class="visually-hidden"> Меню</span></button>
+      <ul class="nav-main__list" id="menu-nav">
+        <li class="nav-main__item">
+          <a class="nav-main__link" href="#">Студия</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link" href="#">Клиенты</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link @@nav-active.shop" @@nav-href.shop>Магазин</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link" href="#">Контакты</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link nav-main__link--basket" href="#">Корзина</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+        <h1>New Page</h1>
+        <footer class="footer">
+  <div class="map footer__map" id="map-app" style="width: 100%; height: 416px;"></div>
+  <section class=" contacts footer__contacts">
+    <h2 class="contacts__title">Nerds design studio</h2>
+    <p class="contacts__text contacts__address">191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+    <p class="contacts__text contacts__phone">тел. +7 (812) 275-75-75</p>
+    <button class="button-primary button-primary--contacts contacts__btn" id="write-open-btn">Напишите нам</button>
+  </section>
+  <div class="footer__wrap">
+    <div class="footer__inner">
+      <ul class="social footer__social">
+        <li class="social__item">
+          <a class="social__link" href="#" aria-label="Вконтакте">
+            <svg width="26" height="15" aria-hidden="true">
+              <use xlink:href="../img/sprites/sprite.svg#vk-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#" aria-label="Фейсбук">
+            <svg width="12" height="22" aria-hidden="true">
+              <use xlink:href="../img/sprites/sprite.svg#fb-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#" aria-label="Инстаграм">
+            <svg width="21" height="21" aria-hidden="true">
+              <use xlink:href="../img/sprites/sprite.svg#insta-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__text-wrap">
+        <p class="footer__text footer__text--accent">Давайте дружить, это выгодно!</p>
+        <p class="footer__text">Скидка 10% для друзей из социальных сетей.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+        <script src="js/pageB.js"></script>
+        <script src="js/vendor.js"></script>
+    </body>
+</html>

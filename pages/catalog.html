@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Catalog</title>
+    <meta name="theme-color" content="#c9e0e04d">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="../img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="../img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="../img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="../img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=d9b90687-9646-4066-825d-0b741ff376d4&lang=ru_RU"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="wrap">
+    <nav class="nav-main header__nav">
+      <a class="logo nav-main__logo" aria-label="Логотип Nerds" href="../index.html">
+        <svg width="160" height="65" role="img">
+          <use xlink:href="../img/sprites/sprite.svg#nerds-logo"></use>
+        </svg>
+      </a>
+      <button id="menu-button" class="button-menu nav-main__btn" type="button"><span class="visually-hidden"> Меню</span></button>
+      <ul class="nav-main__list" id="menu-nav">
+        <li class="nav-main__item">
+          <a class="nav-main__link" href="#">Студия</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link" href="#">Клиенты</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link nav-main__link--active" >Магазин</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link" href="#">Контакты</a>
+        </li>
+        <li class="nav-main__item">
+          <a class="nav-main__link nav-main__link--basket" href="#">Корзина</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="page-catalog">
+        <div class="page-catalog__header">
+          <h1 class="page-catalog__title">Магазин готовых шаблонов</h1>
+        </div>
+        <div class="page-catalog__wrap">
+          <section class="filter page-catalog__filter">
+            <h2 class="visually-hidden">Фильтр</h2>
+            <button class="filter__toggle-btn" type="button" id="filter-btn">Фильтр</button>
+            <form action="#">
+              <div class="filter__box" id="filter-box">
+                <div class="filter__wrap">
+                  <div class="filter__inner">
+                    <div class=" filter-price filter__price">
+                      <h3 class="filter__title">Стоимость:</h3>
+                      <div class="range-slider filter-price__range-slider">
+                        <div class="range-slider filter-price__range-slider" id="slider"></div>
+                      </div>
+
+                      <div class="filter-price__wrap">
+                        <div class="filter-price__inner filter-price__range-min">
+                          <span class="filter-price__subtitle">От</span>
+                          <span class="filter-price__value" id="range-min">0</span>
+                          <input  type="hidden" id="price-min" name="price-min" value="0" data-min="0" data-start="0">
+                        </div>
+
+                        <div class="filter-price__inner filter-price__range-max">
+                          <span class="filter-price__subtitle">До</span>
+                          <span class="filter-price__value" id="range-max">15 000</span>
+                          <input type="hidden" id="price-max" name="price-max" value="15000" data-max="23000" data-start="15000">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="filter__inner">
+                    <h3 class="filter__title">Сетка:</h3>
+                    <ul class="filter__list">
+                      <li class="filter__item">
+                        <input class="visually-hidden input-radio" type="radio" id="radio-adaptive" name="grid" value="adaptive" checked>
+                        <label class="label input-radio__label filter__label" for="radio-adaptive">Адаптивная</label>
+                      </li>
+                      <li class="filter__item">
+                        <input class="visually-hidden input-radio" type="radio" id="radio-static" name="grid" value="static">
+                        <label class="label input-radio__label filter__label" for="radio-static">Фиксированная</label>
+                      </li>
+                      <li class="filter__item">
+                        <input class="visually-hidden input-radio" type="radio" id="radio-liquid" name="grid" value="liquid">
+                        <label class="label input-radio__label filter__label" for="radio-liquid">Резиновая</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="filter__inner">
+                    <h3 class="filter__title">Особенности:</h3>
+                    <ul class="filter__list">
+                      <li class="filter__item">
+                        <input class="visually-hidden input-checkbox" type="checkbox" id="checkbox-slider" name="feature" value="slider" checked>
+                        <label class="label input-checkbox__label filter__label" for="checkbox-slider">Слайдер</label>
+                      </li>
+                      <li class="filter__item">
+                        <input class="visually-hidden input-checkbox" type="checkbox" id="checkbox-advanteges" name="feature" value="advanteges">
+                        <label class="label input-checkbox__label filter__label" for="checkbox-advanteges">Блок преимуществ</label>
+                      </li>
+                      <li class="filter__item">
+                        <input class="visually-hidden input-checkbox" type="checkbox" id="checkbox-news" name="feature" value="news" checked>
+                        <label class="label input-checkbox__label filter__label" for="checkbox-news">Новости</label>
+                      </li>
+                      <li class="filter__item">
+                        <input class="visually-hidden input-checkbox" type="checkbox" id="checkbox-gallery" name="feature" value="gallery">
+                        <label class="label input-checkbox__label filter__label" for="checkbox-gallery">Галерея</label>
+                      </li>
+                      <li class="filter__item">
+                        <input class="visually-hidden input-checkbox" type="checkbox" id="checkbox-basket" name="feature" value="basket">
+                        <label class="label input-checkbox__label filter__label" for="checkbox-basket">Корзина</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="button-secondary filter__btn" type="submit">Показать</button>
+                </div>
+              </div>
+            </form>
+          </section>
+          <section class="sort page-catalog__sort">
+            <h2 class="sort__title">Сортировать:</h2>
+            <ul class="sort__list">
+              <li class="sort__item">
+                <a class="sort__link sort__link--active">По цене</a>
+              </li>
+              <li class="sort__item">
+                <a class="sort__link" href="#">По типу</a>
+              </li>
+              <li class="sort__item">
+                <a class="sort__link" href="#">По названию</a>
+              </li>
+            </ul>
+            <ul class="sort__list">
+              <li class="sort__item">
+                <a class="sort__link sort__link--down sort__link--active"><span class="visually-hidden">По убыванию</span></a>
+              </li>
+              <li class="sort__item">
+                <a class="sort__link sort__link--up" href="#"><span class="visually-hidden">По возростанию</span></a>
+              </li>
+            </ul>
+          </section>
+          <section class="products page-catalog__products">
+            <h2 class="visually-hidden">Каталог</h2>
+            <div class="products__wrap">
+              <article class="card products__card">
+                <div class="card__box">
+                  <a class="card__link" href="#">
+                    <h3 class="card__title">Sedona</h3>
+                  </a>
+                  <p class="card__desc">Информационный сайт <br> для туристов</p>
+                  <button class="button-primary card__btn">9 900<span class="card__currency"> Руб.</span></button>
+                  <div class="card__wrap-img">
+                    <div class="card__img">
+                      <picture>
+                        <img src="../img/img-sedona.jpg" srcset="../img/img-sedona.jpg 1x, ../img/img-sedona@2x.jpg 2x, ../img/img-sedona@3x.jpg 3x" alt="Sedona">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card products__card">
+                <div class="card__box">
+                  <a class="card__link" href="#">
+                    <h3 class="card__title">Pink App</h3>
+                  </a>
+                  <p class="card__desc">Продуктовый лендинг <br> приложения для iOS и Android</p>
+                  <button class="button-primary card__btn">9 900<span class="card__currency"> Руб.</span></button>
+                  <div class="card__wrap-img">
+                    <div class="card__img">
+                      <picture>
+                        <img src="../img/img-pink.jpg" srcset="../img/img-pink.jpg 1x, ../img/img-pink@2x.jpg 2x, ../img/img-pink@3x.jpg 3x" alt="Pink App">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card products__card">
+                <div class="card__box">
+                  <a class="card__link" href="#">
+                    <h3 class="card__title">Barbershop</h3>
+                  </a>
+                  <p class="card__desc">Сайт салоны красоты. <br> Для мужчин, да.</p>
+                  <button class="button-primary card__btn">9 900<span class="card__currency"> Руб.</span></button>
+                  <div class="card__wrap-img">
+                    <div class="card__img">
+                      <picture>
+                        <img src="../img/img-barbershop.jpg" srcset="../img/img-barbershop.jpg 1x, ../img/img-barbershop@2x.jpg 2x, ../img/img-barbershop@3x.jpg 3x" alt="Barbershop">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card products__card">
+                <div class="card__box">
+                  <a class="card__link" href="#">
+                    <h3 class="card__title">Mishka</h3>
+                  </a>
+                  <p class="card__desc">Интернет-магазин <br> вязаных игрушек</p>
+                  <button class="button-primary card__btn">9 900<span class="card__currency"> Руб.</span></button>
+                  <div class="card__wrap-img">
+                    <div class="card__img">
+                      <picture>
+                        <img src="../img/img-mishka.jpg" srcset="../img/img-mishka.jpg 1x, ../img/img-mishka@2x.jpg 2x, ../img/img-mishka@3x.jpg 3x" alt="Mishka">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card products__card">
+                <div class="card__box">
+                  <a class="card__link" href="#">
+                    <h3 class="card__title">A Plus</h3>
+                  </a>
+                  <p class="card__desc">Лендинг курсов повышения <br> квалификации</p>
+                  <button class="button-primary card__btn">9 900<span class="card__currency"> Руб.</span></button>
+                  <div class="card__wrap-img">
+                    <div class="card__img">
+                      <picture>
+                        <img src="../img/img-aplus.jpg" srcset="../img/img-aplus.jpg 1x, ../img/img-aplus@2x.jpg 2x, ../img/img-aplus@3x.jpg 3x" alt="A Plus">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card products__card">
+                <div class="card__box">
+                  <a class="card__link" href="#">
+                    <h3 class="card__title">Кваст</h3>
+                  </a>
+                  <p class="card__desc">Промо-сайт производителя <br> крафтового кваса</p>
+                  <button class="button-primary card__btn">9 900<span class="card__currency"> Руб.</span></button>
+                  <div class="card__wrap-img">
+                    <div class="card__img">
+                      <picture>
+                        <img src="../img/img-kvast.jpg" srcset="../img/img-kvast.jpg 1x, ../img/img-kvast@2x.jpg 2x, ../img/img-kvast@3x.jpg 3x" alt="Кваст">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+          <div class="page-catalog__pagination" id="pagination-js"></div>
+        </div>
+      </main>
+      <footer class="footer">
+  <div class="map footer__map" id="map-app" style="width: 100%; height: 416px;"></div>
+  <section class=" contacts footer__contacts">
+    <h2 class="contacts__title">Nerds design studio</h2>
+    <p class="contacts__text contacts__address">191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+    <p class="contacts__text contacts__phone">тел. +7 (812) 275-75-75</p>
+    <button class="button-primary button-primary--contacts contacts__btn" id="write-open-btn">Напишите нам</button>
+  </section>
+  <div class="footer__wrap">
+    <div class="footer__inner">
+      <ul class="social footer__social">
+        <li class="social__item">
+          <a class="social__link" href="#" aria-label="Вконтакте">
+            <svg width="26" height="15" aria-hidden="true">
+              <use xlink:href="../img/sprites/sprite.svg#vk-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#" aria-label="Фейсбук">
+            <svg width="12" height="22" aria-hidden="true">
+              <use xlink:href="../img/sprites/sprite.svg#fb-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#" aria-label="Инстаграм">
+            <svg width="21" height="21" aria-hidden="true">
+              <use xlink:href="../img/sprites/sprite.svg#insta-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__text-wrap">
+        <p class="footer__text footer__text--accent">Давайте дружить, это выгодно!</p>
+        <p class="footer__text">Скидка 10% для друзей из социальных сетей.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      <section class="popup-write" id="write-popup" style="display: none;">
+  <h2 class="popup-write__title">Напишите нам</h2>
+  <form action="#">
+    <div class="popup-write__wrap">
+      <div class="popup-write__inner popup-write__inner--name">
+        <label class="label label--write popup-write__label" for="write-name">Ваше имя:</label>
+        <input class="input popup-write__input" id="write-name" type="text" placeholder="Имя Фамилия" name="name">
+      </div>
+      <div class="popup-write__inner popup-write__inner--mail">
+        <label class="label label--write popup-write__label" for="write-mail">Ваш e-mail:</label>
+        <input class="input popup-write__input" id="write-mail" type="email" placeholder="email@example.com" name="email">
+      </div>
+      <div class="popup-write__inner popup-write__inner--message">
+        <label class="label label--write popup-write__label" for="write-message">Текст письма:</label>
+        <textarea class="textarea popup-write__textarea" id="write-message" placeholder="В свободной форме" name="message"></textarea>
+      </div>
+    </div>
+    <button class="button-primary button-primary--popup-write popup-write__btn" type="submit">Отправить</button>
+  </form>
+  <button class="button-close popup-write__btn-close" id="write-close-btn">
+    <span class="visually-hidden">Закрыть</span>
+  </button>
+</section>
+
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/catalog.js"></script>
+    <script src="../js/vendor.js"></script>
+  </body>
+</html>
