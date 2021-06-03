@@ -1,0 +1,18 @@
+.products__wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products__card {
+    margin-bottom: 32px;
+}
+
+.products__card:nth-child(odd) {
+    margin-right: 38px;
+}
+
+@media(max-width: $tablet-width) {
+    .products {
+        max-width: 800px;
+    }
+}

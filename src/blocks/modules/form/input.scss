@@ -1,0 +1,29 @@
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 360px;
+    border: 2px solid $color-border-input;
+    padding: 14px 16px;
+    transition: all 0.3s;
+    background-color: $bg-white;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgba($text-dark-secondary, 0.5);
+
+    &:hover {
+        border: 2px solid $color-border-input-hover;
+    }
+
+    &:focus {
+        border: 2px solid $color-border-input-focus;
+        outline: none;
+        color: rgba($text-dark-secondary, 1);
+    }
+
+    &--invalid {
+        border: 2px solid $color-border-input-invalid;
+        color: $text-red;
+    }
+}

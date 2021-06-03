@@ -1,0 +1,29 @@
+.filter-price__wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 261px;
+    margin-top: 15px;
+    padding-bottom: 5px;
+}
+
+.filter-price__subtitle {
+    margin-right: 10px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $text-dark-primary;
+    text-transform: uppercase;
+}
+
+.filter-price__value {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 80px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    background-color: $bg-grey;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+    color: $text-dark-primary;
+}

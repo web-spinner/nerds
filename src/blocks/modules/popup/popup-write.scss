@@ -1,0 +1,70 @@
+.popup-write {
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    bottom: 80px;
+    left: 50%;
+    width: 100%;
+    max-width: 960px;
+    padding: 65px 100px 85px;
+    transform: translate(-50%, 0);
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-color: $bg-white;
+    box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
+}
+
+.popup-write::before {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+}
+
+.popup-write__title {
+    margin: 0;
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 500;
+    color: $text-black;
+}
+
+.popup-write__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.popup-write__inner {
+    flex-basis: 360px;
+    &--name {
+        margin-right: auto;
+    }
+    &--message {
+        flex-basis: 100%;
+    }
+}
+
+.popup-write__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.popup-write__input {
+    margin-bottom: 30px;
+}
+
+.popup-write__btn {
+    margin-top: 40px;
+}
+
+.popup-write__btn-close {
+    position: absolute;
+    top: 80px;
+    right: 90px;
+}

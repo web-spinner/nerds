@@ -1,0 +1,134 @@
+.nav-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav-main__btn {
+    display: none;
+}
+
+.nav-main__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0;
+    padding: 0;
+    padding-top: 5px;
+    list-style: none;
+}
+
+.nav-main__item {
+    margin-right: 46px;
+
+    &:last-child {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+.nav-main__link {
+    display: inline-block;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 30px;
+    color: $text-black;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        color: $text-red;
+    }
+
+    &:active {
+        color: rgba($text-black, 0.3);
+    }
+
+    &--active:hover, &--active:focus, &--active:active {
+        color: rgba($text-black, 1);
+    }
+}
+
+.nav-main__link::after {
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    transform: translate(-50%, 0);
+    background-color: $color-link-line;
+}
+
+.nav-main__link--active::after {
+    display: block;
+}
+
+.nav-main__link--basket {
+    padding-left: 46px;
+    background-image: url("../img/basket-icon.svg");
+    background-position: 5px center;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: $tablet-width) {
+    .nav-main {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-main__list {
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width: $mobile-width) {
+    .nav-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .nav-main__logo {
+        margin: 0;
+    }
+
+    .nav-main__btn {
+        display: inline-block;
+    }
+
+    .nav-main__list {
+        display: none;
+    }
+
+    .nav-main__item {
+        margin-right: 0;
+
+        &:last-child {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .nav-main__item + .nav-main__item {
+        margin-top: 10px;
+    }
+
+    .nav-main__link {
+        padding: 0;
+
+        &--basket {
+            padding-left: 30px;
+        }
+    }
+}

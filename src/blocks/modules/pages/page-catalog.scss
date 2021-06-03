@@ -1,0 +1,136 @@
+.page-catalog {
+    padding-bottom: 60px;
+}
+
+.page-catalog__header {
+    padding: 55px 0 110px;
+    background-color: $bg-grey;
+}
+
+.page-catalog__title {
+    margin: 0;
+    font-size: 55px;
+    line-height: 55px;
+    font-weight: 500;
+    color: $text-black;
+    text-align: center;
+}
+
+.page-catalog__wrap {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 261px auto;
+    grid-template-rows: repeat(3, auto);
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    margin-top: 55px;
+    padding: 0 30px;
+}
+
+.page-catalog__filter {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.page-catalog__sort {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-left: 140px;
+}
+
+.page-catalog__products {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 50px;
+    margin-left: 140px;
+}
+
+.page-catalog__pagination {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-top: 30px;
+    margin-left: 140px;
+}
+
+@media(max-width: $desktop-width) {
+    .page-catalog__sort, .page-catalog__products, .page-catalog__pagination {
+        margin-left: 60px;
+    }
+
+    .page-catalog__sort {
+        max-width: 678px;
+    }
+
+    .page-catalog__products {
+        max-width: 678px;
+        margin-top: 44px;
+    }
+}
+
+@media(max-width: $tablet-width) {
+    .page-catalog {
+        padding-bottom: 50px;
+    }
+
+    .page-catalog__header {
+        padding: 30px 0 60px;
+    }
+
+    .page-catalog__title {
+        font-size: 45px;
+        line-height: 45px;
+    }
+
+    .page-catalog__wrap {
+        display: block;
+        margin-top: 40px;
+    }
+
+    .page-catalog__filter, .page-catalog__sort, .page-catalog__products, .page-catalog__pagination {
+        margin: 0 auto;
+    }
+
+    .page-catalog__sort {
+        margin-top: 25px;
+    }
+
+    .page-catalog__products {
+        margin-top: 10px;
+    }
+
+    .page-catalog .page-catalog__pagination {
+        max-width: 800px;
+        margin-top: 0;
+    }
+}
+
+@media(max-width: $mobile-width) {
+    .page-catalog__header {
+        padding: 0;
+        padding-bottom: 25px;
+    }
+
+    .page-catalog__title {
+        font-size: 34px;
+    }
+}
+
+@media(max-width: $mobile-width) {
+    .page-catalog {
+        padding-bottom: 40px;
+    }
+
+    .page-catalog__wrap {
+        max-width: 320px;
+        padding: 0 15px;
+    }
+}

@@ -1,0 +1,11 @@
+.label {
+    line-height: 20px;
+    font-weight: 400;
+    color: $text-dark-primary;
+
+    &--write {
+        line-height: 18px;
+        font-weight: 700;
+        color: $text-black;
+    }
+}

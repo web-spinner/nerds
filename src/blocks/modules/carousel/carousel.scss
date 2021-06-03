@@ -1,0 +1,207 @@
+.carousel {
+    margin-top: -19px;
+    width: 100%;
+    height: 430px;
+    background-color: $bg-grey;
+}
+
+.carousel__item {
+    position: relative;
+    height: 430px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+    }
+
+    &--first::before {
+        right: 31px;
+        width: 698px;
+        height: 413px;
+        background-image: url("../img/slide-1.png");
+        background-size: 698px 413px;
+
+        @media(min-resolution: $resolution-dpi-2x), 
+            (min-resolution: $resolution-dppx-2x) {
+            background-image: url("../img/slide-1@2x.png");
+        }
+
+        @media(min-resolution: $resolution-dpi-3x), 
+            (min-resolution: $resolution-dppx-3x) {
+            background-image: url("../img/slide-1@3x.png");
+        }
+    }
+
+    &--second::before {
+        width: 663px;
+        height: 430px;
+        background-image: url(../img/slide-2.png);
+        background-size: 663px 430px;
+
+        @media(min-resolution: $resolution-dpi-2x), 
+            (min-resolution: $resolution-dppx-2x) {
+            background-image: url(../img/slide-2@2x.png);
+        }
+
+        @media(min-resolution: $resolution-dpi-3x), 
+            (min-resolution: $resolution-dppx-3x) {
+            background-image: url(../img/slide-2@3x.png);
+        }
+    }
+
+    &--third::before {
+        width: 759px;
+        height: 411px;
+        background-image: url(../img/slide-3.png);
+        background-size: 759px 411px;
+
+        @media(min-resolution: $resolution-dpi-2x), 
+            (min-resolution: $resolution-dppx-2x) {
+            background-image: url(../img/slide-3@2x.png);
+        }
+
+        @media(min-resolution: $resolution-dpi-3x), 
+            (min-resolution: $resolution-dppx-3x) {
+            background-image: url(../img/slide-3@3x.png);
+        }
+    }
+}
+
+.carousel__title {
+    margin: 0;
+    margin-top: 75px;
+    font-size: 55px;
+    line-height: 55px;
+    font-weight: 500;
+    color: $text-black;
+}
+
+.carousel__text {
+    margin: 0;
+    margin-top: 30px;
+    line-height: 24px;
+    color: $text-dark-primary;
+}
+
+.carousel__btn {
+    margin-top: 37px;
+}
+
+.carousel__dots {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 96px;
+    left: 50%;
+    width: 88px;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, 0);
+    list-style: none;
+}
+
+.carousel__dots button {
+    box-sizing: border-box;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: none;
+    transition: all 0.3s;
+    background-color: $bg-white;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.carousel__dots .slick-active button::before {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #c1c1c1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+@media(max-width: $desktop-width) {
+    .carousel__item {
+        &--first::before {
+            width: 600px;
+            height: 356px;
+            background-size: 600px auto;
+        }
+
+        &--second::before {
+            width: 580px;
+            height: 377px;
+            background-size: 580px auto;
+        }
+
+        &--third::before {
+            width: 600px;
+            height: 325px;
+            background-size: 600px auto;
+        }
+    }
+}
+
+@media(max-width: $tablet-width) {
+    .carousel {
+        max-width: 800px;
+        height: 330px;
+        margin: 0 auto;
+    }
+
+    .carousel__title {
+        margin-top: 50px;
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .carousel__text {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .carousel__item {
+        height: 330px;
+
+        &::before {
+            right: 0;
+        }
+
+        &--first::before {
+            width: 450px;
+            height: 266px;
+            background-size: 450px auto;
+        }
+
+        &--second::before {
+            width: 390px;
+            height: 253px;
+            background-size: 390px auto;
+        }
+
+        &--third::before {
+            width: 415px;
+            height: 222px;
+            background-size: 415px auto;
+        }
+    }
+
+    .carousel__dots {
+        bottom: 75px;
+    }
+}

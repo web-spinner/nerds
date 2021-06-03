@@ -1,0 +1,44 @@
+.social {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social__item {
+    margin-right: 12px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.social__link {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 79px;
+    height: 79px;
+    border: none;
+    transition: all 0.3s;
+    border-radius: 50%;
+    background-color: $bg-light;
+
+    &:hover, &:focus {
+        background-color: $bg-red-hover;
+    }
+
+    &:active {
+        background-color: $bg-red-active;
+        svg {
+            opacity: 0.3;
+        }
+    }
+}
+
+.social__link svg {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

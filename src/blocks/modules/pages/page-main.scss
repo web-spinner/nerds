@@ -1,0 +1,51 @@
+.page-main {
+    margin-bottom: 80px;
+}
+
+.page-main__header {
+    background-color: $bg-grey;
+}
+
+.page-main__addvantages {
+    margin-top: 80px;
+}
+
+.page-main__about {
+    margin-top: 40px;
+}
+
+.page-main__works {
+    margin-top: 40px;
+}
+
+@media(max-width: $tablet-width) {
+    .page-main {
+        margin-bottom: 50px;
+    }
+
+    .page-main__addvantages {
+        margin-top: 50px;
+    }
+}
+
+@media(max-width: $mobile-width) {
+    .page-main {
+        margin-bottom: 40px;
+    }
+
+    .page-main__header {
+        display: none;
+    }
+
+    .page-main__addvantages {
+        margin-top: 30px;
+    }
+
+    .page-main__about {
+        margin-top: 30px;
+    }
+
+    .page-main__works {
+        margin-top: 40px;
+    }
+}

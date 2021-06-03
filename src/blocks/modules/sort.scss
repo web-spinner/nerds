@@ -1,0 +1,121 @@
+.sort {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sort__title {
+    margin: 0;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    color: $text-black;
+    text-transform: uppercase;
+}
+
+.sort__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-right: 48px;
+    padding: 0;
+    list-style: none;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.sort__item {
+    margin-right: 26px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.sort__list:last-child .sort__item {
+    margin-right: 18px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.sort__link {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $text-black;
+    transition: all 0.3s;
+    opacity: 0.3;
+
+    &[href] {
+        cursor: pointer;
+    }
+
+    &[href]:hover, &:focus {
+        opacity: 0.6;
+    }
+
+    &[href]:active, &--active {
+        opacity: 1;
+    }
+
+    &--down, &--up {
+        display: inline-block;
+        width: 11px;
+        height: 10px;
+        font-size: 0;
+        line-height: 0;
+        background-repeat: no-repeat;
+    }
+
+    &--down {
+        background-image: url(../img/icon-down-dir.svg);
+    }
+
+    &--up {
+        background-image: url(../img/icon-up-dir.svg);
+    }
+}
+
+@media(max-width: $tablet-width) {
+    .sort {
+        max-width: 800px;
+    }
+}
+
+@media(max-width: $mobile-width) {
+    .sort {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .sort__title {
+    }
+
+    .sort__list {
+        margin: 0;
+    }
+
+    .sort__item, .sort__list:last-child .sort__item {
+        margin-right: 0;
+    }
+
+    .sort__list .sort__item + .sort__item {
+        margin-left: 10px;
+    }
+
+    .sort__list:last-child .sort__item + .sort__item {
+        margin-left: 15px;
+    }
+
+    .sort__link {
+        font-size: 13px;
+    }
+}

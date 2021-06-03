@@ -1,0 +1,39 @@
+.input-checkbox__label {
+    position: relative;
+    padding-left: 36px;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 23px;
+        height: 23px;
+        transform: translate(0, -50%);
+        background-image: url("../img/checkbox-off.svg");
+        background-repeat: no-repeat;
+        opacity: 0.4;
+    }
+}
+
+.input-checkbox:checked + .input-checkbox__label {
+    &::before {
+        width: 27px;
+        background-image: url("../img/checkbox-on.svg");
+        background-repeat: no-repeat;
+        opacity: 0.4;
+    }
+}
+
+.input-checkbox__label:hover::before, .input-checkbox:focus + .input-checkbox__label::before, .input-checkbox:checked + .input-checkbox__label:hover::before, .input-checkbox:checked:focus + .input-checkbox__label::before {
+    opacity: 1;
+}
+
+.input-checkbox:disabled + .input-checkbox__label, .input-checkbox:checked:disabled + .input-checkbox__label {
+    color: rgba($text-dark-primary, 0.3);
+
+    &::before {
+        opacity: 0.1;
+    }
+}

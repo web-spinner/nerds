@@ -1,0 +1,19 @@
+.button-close {
+    width: 21px;
+    height: 21px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/close-cross.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.3;
+
+    &:hover, &:focus {
+        opacity: 1;
+    }
+
+    &:active {
+        opacity: 0.1;
+    }
+}

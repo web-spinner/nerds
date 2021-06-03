@@ -1,0 +1,36 @@
+.button-menu {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    border: none;
+    padding: 0;
+    transition: all 0.3s;
+    background-color: transparent;
+    opacity: 1;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        opacity: 0.6;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        background-image: url("../img/menu.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &--opened::before {
+        background-image: url("../img/cancel.svg");
+    }
+}
