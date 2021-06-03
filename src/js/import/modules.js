@@ -1,2 +1,3 @@
-import "%modules%/header/header";
-import "%modules%/footer/footer"
+import "%modules%/nav/nav-menu";
+import "%modules%/map/map";
+import "%modules%/popup/popup-write";

@@ -15,6 +15,8 @@ module.exports = {
     
     entry: {
         main: "./src/js/index.js",
+        catalog: "./src/js/catalog.js",
+        app: "./src/js/app.js",
     },
 
     output: {
