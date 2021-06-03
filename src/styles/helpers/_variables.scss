@@ -1,0 +1,51 @@
+// Fonts
+$font-family: Roboto, Arial, Helvetica, sans-serif;
+
+// Media
+$mobile-width: 767px;
+$tablet-width: 1079px;
+$desktop-width: 1220px;
+
+// Retina
+$resolution-dppx-2x: 1.25dppx;
+$resolution-dppx-3x: 2.25dppx;
+$resolution-dpi-2x: 120dpi;
+$resolution-dpi-3x: 216dpi;
+
+// Colors
+
+$text-black: #000000;
+$text-white: #ffffff;
+$text-dark-primary: #283136;
+$text-dark-secondary: #444444;
+$text-light: #666666;
+$text-red: #e74246;
+
+$color-link: #000000;
+$color-link-hover: #fb565a;
+$color-link-active: #000000;
+$color-link-line: #fb565a;
+
+$bg-red: #fb565a;
+$bg-red-hover: #e74246;
+$bg-red-active: #d7373b;
+$bg-green: #00ca74;
+$bg-green-hover: #00bc6c;
+$bg-green-active: #00aa62;
+$bg-yellow: #efc84a;
+$bg-yellow-hover: #eab534;
+$bg-yellow-active: #e5a722;
+$bg-grey: #eeeeee;
+$bg-grey-hover: #dfdfdf;
+$bg-grey-active: #d5d5d5;
+$bg-light: #e1e1e1;
+$bg-white: #ffffff;
+$bg-range: #d7dcde;
+$bg-range-point: #ababab;
+
+$color-border-input: #d7dcde;
+$color-border-input-hover: #b4b9bb;
+$color-border-input-focus: #000000;
+$color-border-input-invalid: #e74246;
+
+$border-grey: #dbdbdb;
