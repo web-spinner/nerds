@@ -1,0 +1,23 @@
+<section class="popup-write" id="write-popup" style="display: none;">
+  <h2 class="popup-write__title">Напишите нам</h2>
+  <form action="#">
+    <div class="popup-write__wrap">
+      <div class="popup-write__inner popup-write__inner--name">
+        <label class="label label--write popup-write__label" for="write-name">Ваше имя:</label>
+        <input class="input popup-write__input" id="write-name" type="text" placeholder="Имя Фамилия" name="name">
+      </div>
+      <div class="popup-write__inner popup-write__inner--mail">
+        <label class="label label--write popup-write__label" for="write-mail">Ваш e-mail:</label>
+        <input class="input popup-write__input" id="write-mail" type="email" placeholder="email@example.com" name="email">
+      </div>
+      <div class="popup-write__inner popup-write__inner--message">
+        <label class="label label--write popup-write__label" for="write-message">Текст письма:</label>
+        <textarea class="textarea popup-write__textarea" id="write-message" placeholder="В свободной форме" name="message"></textarea>
+      </div>
+    </div>
+    <button class="button-primary button-primary--popup-write popup-write__btn" type="submit">Отправить</button>
+  </form>
+  <button class="button-close popup-write__btn-close" id="write-close-btn">
+    <span class="visually-hidden">Закрыть</span>
+  </button>
+</section>
